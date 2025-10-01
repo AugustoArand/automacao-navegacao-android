@@ -1,0 +1,27 @@
+[project]
+name = "automacao-navegacao-android"
+version = "0.1.0"
+description = "Automação para navegar em aplicativos Android usando Robot Framework e Appium"
+authors = [
+    {name = "Desenvolvedor", email = "dev@exemplo.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "robotframework>=7.0.0",
+    "robotframework-appiumlibrary>=3.1.0",
+    "pyyaml>=6.0.0",
+    "robotframework-requests>=0.9.0",
+    "selenium>=4.0.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "robotframework-debuglibrary>=4.0.0",
+    "robotframework-lint>=1.0.0"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
