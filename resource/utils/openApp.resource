@@ -19,4 +19,16 @@ Open App
     ...    disableIdLocatorAutocompletion=${True}
     ...    platformVersion=${PLATFORM_VERSION}
     ...    deviceName=${DEVICE_NAME}
+
+Open Device
+    [Documentation]    Abre o dispositivo Android usando Appium
+    Open Application
+    ...    remote_url=http://localhost:4723/wd/hub
+    ...    platformName=Android
+    ...    platformVersion=15
+    ...    deviceName=S23 FE de Augusto
+    ...    automationName=UiAutomator2
+    ...    newCommandTimeout=3600
+    ...    connectHardwareKeyboard=${True}
+    ...    disableIdLocatorAutocompletion=${True}
  

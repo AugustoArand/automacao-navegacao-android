@@ -1,6 +1,6 @@
 *** Settings ***
-Resource    ../base.resource
-Test Setup    Open App
+Resource    ../../base.resource
+Test Setup    Open Device
 Test Teardown    Close All Applications
 
 *** Test Cases ***

@@ -1,0 +1,16 @@
+configuration:
+  configIcon: Config.
+
+connection:
+  connectionIcon: //android.widget.TextView[@resource-id="android:id/title" and @text="Conexões"]
+  connectionScreen: com.android.settings:id/recycler_view
+  wifiInfo: //androidx.recyclerview.widget.RecyclerView[@resource-id="com.android.settings:id/recycler_view"]/android.widget.LinearLayout[1]/android.widget.RelativeLayout
+  wifiEnabledId: com.android.settings:id/sesl_switchbar_switch
+  wifiScreenSwitch: com.android.settings:id/sesl_switchbar_switch 
+  bluetoothInfo: //androidx.recyclerview.widget.RecyclerView[@resource-id="com.android.settings:id/recycler_view"]/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout
+  bluetoothEnabledId: //android.widget.Switch[@content-desc="Bluetooth"]
+  bluetoothScreenSwitch: com.android.settings:id/sesl_switchbar_switch
+  
+  
+screen:
+  connectionScreen: com.android.settings:id/recycler_view
