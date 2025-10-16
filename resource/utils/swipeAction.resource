@@ -32,3 +32,8 @@ Swipe Up In Overview Actions
     Swipe    start_x=${center_x}    start_y=${start_y}    end_x=${center_x}    end_y=${end_y}    duration=${duration}
     
     Log    Swipe realizado no elemento overview_actions_view: (${center_x}, ${start_y}) -> (${center_x}, ${end_y})
+
+Swipe Up On 720x1280 Screen
+    [Documentation]    Realiza um swipe para cima na tela 720x1280
+    [Arguments]    ${duration}=2s
+    Swipe    start_x=360    start_y=1000    end_x=360    end_y=200    duration=${duration}

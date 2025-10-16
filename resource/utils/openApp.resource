@@ -31,4 +31,15 @@ Open Device
     ...    newCommandTimeout=3600
     ...    connectHardwareKeyboard=${True}
     ...    disableIdLocatorAutocompletion=${True}
+    ...    
+
+Open Terminal
+    [Documentation]    Abre o terminal do dispositivo Android usando Appium
+    Open Application
+    ...    remote_url=http://localhost:4723/wd/hub
+    ...    platformName=Android
+    ...    platformVersion=13
+    ...    deviceName=TS-G820
+    ...    automationName=UiAutomator2
+    ...    disableIdLocatorAutocompletion=${True}
  

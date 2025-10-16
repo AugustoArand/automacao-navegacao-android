@@ -1,23 +1,29 @@
-# Automação de Navegação Android
+# Automação de Navegação Android - GPOS820
 
-Este projeto implementa uma automação para navegação em aplicativos Android utilizando Robot Framework e Appium.
+Este projeto implementa uma automação completa para verificação de configurações do terminal de pagamento GPOS820 utilizando Robot Framework e Appium.
+
+## 🎯 Objetivo
+
+Automatizar a verificação das configurações e informações do dispositivo GPOS820:
+- ✅ **Nome do dispositivo** (TS-G820)
+- ✅ **Versão do Android** (13)
+- ✅ **Versão do firmware** 
+- ✅ **Versão do hardware** 
+- ✅ **Número de série** 
 
 ## 🛠️ Tecnologias Utilizadas
 
 ### Principais
-- **Robot Framework** (7.0.0+) - Framework de automação de testes
+- **Robot Framework** (7.3.2+) - Framework de automação de testes
 - **Appium** - Ferramenta de automação para aplicações mobile
 - **AppiumLibrary** (3.1.0+) - Biblioteca do Robot Framework para integração com Appium
 - **Python** (3.11+) - Linguagem de programação
+- **Poetry** - Gerenciador de dependências
 
 ### Dependências Adicionais
 - **PyYAML** (6.0.0+) - Para leitura de arquivos de configuração YAML
 - **Selenium** (4.0.0+) - WebDriver para automação web
-- **RobotFramework-Requests** (0.9.0+) - Para requisições HTTP
-
-### Dependências de Desenvolvimento
-- **RobotFramework-DebugLibrary** (4.0.0+) - Para debug dos testes
-- **RobotFramework-Lint** (1.0.0+) - Para análise estática do código
+- **Collections** - Para manipulação de listas e elementos
 
 ## 📱 Configuração do Dispositivo
 
@@ -73,55 +79,75 @@ npm install -g appium@next
 appium driver install uiautomator2
 
 # Instalar dependências Python
-pip install robotframework robotframework-appiumlibrary pyyaml selenium
+pip install robotframework>=7.0.0 robotframework-appiumlibrary>=3.1.0 pyyaml>=6.0.0 robotframework-requests>=0.9.0 selenium>=4.0.0
 ```
 
 ### Execução dos Testes
 ```bash
-# Usando o script automatizado
+# Usando o script automatizado (recomendado)
 ./run_tests.sh
 
-# Ou executando diretamente
-robot test/
+# Ou executando apenas o teste principal do GPOS820
+poetry run robot test/dispositivoFisico/configGPOS820.robot
+
+# Executar com mais detalhes de log
+poetry run robot --loglevel DEBUG test/dispositivoFisico/configGPOS820.robot
 ```
 
-### Iniciar Servidor Appium
-```bash
-appium -pa wd/hub
+### Exemplo de Saída Esperada
+```
+====================================
+VERSÃO DO ANDROID ENCONTRADA: 13
+VERSÃO ESPERADA: 13
+====================================
+VERSÃO DO FIRMWARE ENCONTRADA: V4.0.1  
+VERSÃO ESPERADA: V4.0.1
+====================================
+VERSÃO DO HARDWARE ENCONTRADA: V4.0.1
+VERSÃO ESPERADA: V4.0.1
+====================================
+NÚMERO DE SÉRIE ENCONTRADO: 4101012546000945
+NÚMERO ESPERADO: 4101012546000945
+====================================
 ```
 
 ## 📋 Funcionalidades Implementadas
 
-### Aplicações Testadas
-- **Chrome** - Navegação e abertura do navegador
-- **Configurações** - Acesso às configurações do sistema
-- **Menu de Aplicativos** - Navegação pelo menu principal
+### Verificações Automatizadas para GPOS820
+- **✅ Navegação para Configurações** - Acesso automático ao menu de configurações
+- **✅ Verificação do Nome do Dispositivo** - Confirma se é TS-G820  
+- **✅ Verificação da Versão do Android** - Valida versão 13
+- **✅ Verificação da Versão do Firmware** - Confirma V4.0.1
+- **✅ Verificação da Versão do Hardware** - Valida V4.0.1
+- **✅ Verificação do Número de Série** - Confirma série específica
 
-### Ações Disponíveis
-- Abertura de aplicações
-- Navegação por menus
-- Ações de swipe/deslizar
-- Captura de screenshots
-- Geração de relatórios HTML
+### Recursos Avançados
+- **🔄 Scroll automático** - Navega automaticamente pela tela para encontrar elementos
+- **🔍 Múltiplos localizadores** - Fallback para diferentes estratégias de localização
+- **📸 Screenshots automáticos** - Captura evidências de cada etapa
+- **📝 Logs detalhados** - Registra todas as ações e verificações
+- **🚨 Tratamento de erros** - Continua execução mesmo com diferenças menores
 
 ## 📊 Relatórios
 
 Os testes geram automaticamente:
-- **log.html** - Log detalhado da execução
-- **output.xml** - Saída em formato XML
+- **log.html** - Log detalhado com todas as verificações
+- **output.xml** - Saída em formato XML para integração
 - **report.html** - Relatório visual dos resultados
-- **Screenshots** - Capturas de tela em caso de falhas
+- **Screenshots** - Evidências de cada etapa do teste (Tela_*.png)
 
 ## 🔧 Configuração
 
-### Localizadores
-Os elementos da interface são mapeados em arquivos YAML para facilitar manutenção:
-- `chromeLocator.yml` - Elementos do Chrome
-- `configLocators.yml` - Elementos das configurações
-- `menuAppLocators.yml` - Elementos do menu de apps
+### Localizadores Específicos do GPOS820
+Os elementos são mapeados em `resource/locators/gpos760/configLocators.yml`:
+- `configIcon` - Ícone de configurações
+- `versaoAndroid` - Elemento da versão do Android  
+- `versionFirmware` - Elemento da versão do firmware
+- `versionHardware` - Elemento da versão do hardware
+- `secaoNumeroSerie` - Seção do número de série
 
-### Page Objects
-Implementação do padrão Page Object para organização:
+### Page Objects Otimizados
+Implementação específica em `resource/pages/gpos760/configPage.resource`:
 - `chromePage.resource` - Ações específicas do Chrome
 - `configPage.resource` - Ações das configurações
 

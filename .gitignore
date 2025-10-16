@@ -187,9 +187,16 @@ results/
 selenium-screenshot-*.png
 robot-screenshot-*.png
 
+# Robot Framework evidências específicas do projeto
+evidencia_*.png
+Tela_*.png
+Debug_*.png
+After_scroll_*.png
+
 # Appium specific
 appium.log
 appium-server.log
+uidump.xml
 
 # Android specific
 *.keystore
@@ -200,6 +207,12 @@ local.properties
 *.apk
 *.ipa
 *.aab
+
+# Arquivos temporários de debug criados durante desenvolvimento
+capturar_versao_android.robot
+debug_tela_inicial.robot
+encontrar_versao_android.robot
+investigar_elementos.robot
 
 # Temporary files
 *.tmp
@@ -278,7 +291,18 @@ ehthumbs.db
 Thumbs.db
 
 # Custom project specific
-# Descomente se necessário:
+# Arquivos de configuração locais (descomente se necessário):
 # *.properties
 # config.ini
 # secrets.yml
+
+# Arquivos específicos do projeto GPOS820
+# Configurações de dispositivo específicas
+# device_config_*.yml
+
+# Logs de sessões específicas
+session_*.log
+
+# Backups de configuração
+backup_*.yml
+backup_*.resource

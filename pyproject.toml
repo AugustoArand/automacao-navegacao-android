@@ -1,3 +1,6 @@
+[tool.poetry]
+package-mode = false
+
 [project]
 name = "automacao-navegacao-android"
 version = "0.1.0"
@@ -17,9 +20,13 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "robotframework-debuglibrary>=4.0.0",
+    "robotframework-debuglibrary>=2.5.0",
     "robotframework-lint>=1.0.0"
 ]
+
+[tool.poetry.group.dev.dependencies]
+robotframework-debuglibrary = ">=2.5.0"
+robotframework-lint = ">=1.0.0"
 
 
 [build-system]

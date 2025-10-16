@@ -349,6 +349,21 @@ files = [
 attrs = ">=19.2.0"
 
 [[package]]
+name = "prompt-toolkit"
+version = "3.0.52"
+description = "Library for building powerful interactive command lines in Python"
+optional = false
+python-versions = ">=3.8"
+groups = ["main", "dev"]
+files = [
+    {file = "prompt_toolkit-3.0.52-py3-none-any.whl", hash = "sha256:9aac639a3bbd33284347de5ad8d68ecc044b91a762dc39b7c21095fcd6a19955"},
+    {file = "prompt_toolkit-3.0.52.tar.gz", hash = "sha256:28cde192929c8e7321de85de1ddbe736f1375148b02f2e17edd840042b1be855"},
+]
+
+[package.dependencies]
+wcwidth = "*"
+
+[[package]]
 name = "pycparser"
 version = "2.23"
 description = "C parser in Python"
@@ -485,7 +500,7 @@ version = "7.3.2"
 description = "Generic automation framework for acceptance testing and robotic process automation (RPA)"
 optional = false
 python-versions = ">=3.8"
-groups = ["main"]
+groups = ["main", "dev"]
 files = [
     {file = "robotframework-7.3.2-py3-none-any.whl", hash = "sha256:14ef2afa905285cc073df6ce06d0cd3af4a113df6f815532718079e00c98cca4"},
     {file = "robotframework-7.3.2.tar.gz", hash = "sha256:3bb3e299831ecb1664f3d5082f6ff9f08ba82d61a745bef2227328ef3049e93a"},
@@ -512,6 +527,36 @@ kitchen = ">=1.2.4"
 robotframework = ">=2.6.0"
 selenium = ">=4.26.0"
 six = ">=1.10.0"
+
+[[package]]
+name = "robotframework-debuglibrary"
+version = "2.5.0"
+description = "RobotFramework debug library and an interactive shell"
+optional = false
+python-versions = "*"
+groups = ["main", "dev"]
+files = [
+    {file = "robotframework-debuglibrary-2.5.0.tar.gz", hash = "sha256:c8e135c7561721d36210d6f59a09b7538064367e82d8a3be67cb87088cf9cba7"},
+    {file = "robotframework_debuglibrary-2.5.0-py3-none-any.whl", hash = "sha256:a2bfb2636ead7be440c224317891b4b406a9a71d84b26924031ccf3791a00b96"},
+]
+
+[package.dependencies]
+prompt-toolkit = ">=3"
+robotframework = ">=4"
+
+[[package]]
+name = "robotframework-lint"
+version = "1.1"
+description = "Static analysis tool for robotframework plain text files"
+optional = false
+python-versions = "*"
+groups = ["main", "dev"]
+files = [
+    {file = "robotframework-lint-1.1.tar.gz", hash = "sha256:2b5ac22ed59acbdf65f340ef3ddf10c7e88c9efd37cb03d7470d7c8e869cc0c1"},
+]
+
+[package.dependencies]
+robotframework = "*"
 
 [[package]]
 name = "robotframework-requests"
@@ -659,6 +704,18 @@ socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
 zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
+name = "wcwidth"
+version = "0.2.14"
+description = "Measures the displayed width of unicode strings in a terminal"
+optional = false
+python-versions = ">=3.6"
+groups = ["main", "dev"]
+files = [
+    {file = "wcwidth-0.2.14-py2.py3-none-any.whl", hash = "sha256:a7bb560c8aee30f9957e5f9895805edd20602f2d7f720186dfd906e82b4982e1"},
+    {file = "wcwidth-0.2.14.tar.gz", hash = "sha256:4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"},
+]
+
+[[package]]
 name = "websocket-client"
 version = "1.8.0"
 description = "WebSocket client for Python with low level API options"
@@ -690,7 +747,10 @@ files = [
 [package.dependencies]
 h11 = ">=0.9.0,<1"
 
+[extras]
+dev = ["robotframework-debuglibrary", "robotframework-lint"]
+
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11"
-content-hash = "d3e174e6ae67b812b7b8ea841325a9c54bea44f8d7f62db4a97a9d0c34b9ca21"
+content-hash = "99317f18ca54de5222889f40ea2fda3fe58ccd65dbb2e4c43672082ff7a10e39"

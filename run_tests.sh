@@ -2,7 +2,8 @@
 
 # Script para executar testes de automação Android
 # Automação de Navegação Android - Appium + Robot Framework + Poetry
-# Versão: 2.0 - Atualizado em 04/10/2025
+# Versão: 3.0 - Atualizado em 15/10/2025
+# Suporte completo para GPOS820 - Verificação de configurações do dispositivo
 
 set -e  # Parar execução em caso de erro
 
@@ -39,15 +40,31 @@ echo -e "${NC}"
 echo "📱 Projeto: automacao-navegacao-android"
 echo "🤖 Framework: Robot Framework + Appium"
 echo "📦 Gerenciador: Poetry"
-echo "📅 Data: $(date '+%d/%m/%Y %H:%M:%S')"
+echo "� Dispositivo: GPOS820 Terminal de Pagamento"
+echo "�📅 Data: $(date '+%d/%m/%Y %H:%M:%S')"
+echo ""
+echo "✅ Funcionalidades Testadas:"
+echo "   • Navegação para Configurações"
+echo "   • Verificação de Nome do Dispositivo"
+echo "   • Verificação de Versão do Android"
+echo "   • Verificação de Versão do Firmware"
+echo "   • Verificação de Versão do Hardware"
+echo "   • Verificação de Número de Série"
 echo ""
 
 # Variáveis de configuração
 APPIUM_PORT=${APPIUM_PORT:-4723}
 APPIUM_BASE_PATH=${APPIUM_BASE_PATH:-"/wd/hub"}
 LOG_DIR="log"
-TEST_SUITE=${1:-"test/"}
+TEST_SUITE=${1:-"test/dispositivoFisico/configGPOS820.robot"}
 APPIUM_PID=""
+
+# Novos parâmetros específicos para GPOS820
+DEFAULT_DEVICE_NAME="GPOS820"
+DEFAULT_ANDROID_VERSION="13"
+DEFAULT_FIRMWARE_VERSION="V4.0.1"
+DEFAULT_HARDWARE_VERSION="V4.0.1"
+DEFAULT_SERIAL_NUMBER="4101012546000945"
 
 # Função de limpeza em caso de interrupção
 cleanup() {
@@ -126,29 +143,33 @@ ADB_VERSION=$(adb version | head -1)
 log_info "ADB: $ADB_VERSION"
 
 # Verificar dispositivos Android conectados
-log_info "Verificando dispositivos Android..."
+log_info "Verificando dispositivos Android conectados..."
 adb devices -l
 
 DEVICE_COUNT=$(adb devices | grep -c "device$")
 if [ "$DEVICE_COUNT" -eq 0 ]; then
-    log_error "Nenhum dispositivo Android conectado ou emulador rodando"
+    log_error "Nenhum dispositivo Android conectado"
     echo ""
-    echo "💡 Dicas para conectar dispositivos:"
-    echo "   📱 Dispositivo físico:"
-    echo "      • Ative as 'Opções do desenvolvedor'"
+    echo "💡 Para este projeto, você precisa de:"
+    echo "   📱 Dispositivo GPOS820 (Terminal de Pagamento)"
+    echo "   🔧 Cabo USB para conexão"
+    echo "   ⚙️  Configurações necessárias:"
+    echo "      • Ative 'Opções do desenvolvedor'"
     echo "      • Ative 'Depuração USB'"
-    echo "      • Conecte via cabo USB e autorize o computador"
+    echo "      • Conecte o terminal via USB"
+    echo "      • Autorize a conexão quando solicitado"
     echo ""
-    echo "   📱 Emulador:"
-    echo "      • Inicie o Android Studio"
-    echo "      • Abra o AVD Manager"
-    echo "      • Inicie um emulador"
-    echo ""
-    echo "   🔧 Verificação: Execute 'adb devices' para verificar"
+    echo "   � Verificação: Execute 'adb devices' para confirmar"
+    echo "   📋 Dispositivo esperado: Série $DEFAULT_SERIAL_NUMBER"
     exit 1
 elif [ "$DEVICE_COUNT" -eq 1 ]; then
     DEVICE_ID=$(adb devices | grep "device$" | cut -f1)
     log_success "1 dispositivo conectado: $DEVICE_ID"
+    
+    # Verificar se é um GPOS820 (opcional)
+    DEVICE_MODEL=$(adb shell getprop ro.product.model 2>/dev/null || echo "Unknown")
+    log_info "Modelo do dispositivo: $DEVICE_MODEL"
+    
 else
     log_warning "$DEVICE_COUNT dispositivos conectados. Usando o primeiro disponível."
     adb devices | grep "device$" | nl
@@ -238,15 +259,28 @@ log_info "Configuração da execução:"
 echo "   📂 Suite de testes: $TEST_SUITE"
 echo "   📁 Diretório de logs: $LOG_DIR"
 echo "   🌐 Appium Server: http://localhost:$APPIUM_PORT$APPIUM_BASE_PATH"
-echo "   � Dispositivos disponíveis: $DEVICE_COUNT"
+echo "   📱 Dispositivos disponíveis: $DEVICE_COUNT"
 echo "   🕒 Iniciado em: $(date '+%d/%m/%Y %H:%M:%S')"
+echo ""
+echo "   🎯 Valores esperados para GPOS820:"
+echo "      • Nome do dispositivo: TS-G820"
+echo "      • Versão do Android: $DEFAULT_ANDROID_VERSION"
+echo "      • Versão do firmware: $DEFAULT_FIRMWARE_VERSION"
+echo "      • Versão do hardware: $DEFAULT_HARDWARE_VERSION"
+echo "      • Número de série: $DEFAULT_SERIAL_NUMBER"
 echo ""
 
 # Verificar se a suite de testes existe
 if [ ! -e "$TEST_SUITE" ]; then
     log_error "Suite de testes não encontrada: $TEST_SUITE"
     log_info "Suites disponíveis:"
-    find test/ -name "*.robot" -type f | head -10
+    echo "   📋 Testes principais:"
+    find test/ -name "*.robot" -type f | while read file; do
+        echo "      • $file"
+    done
+    echo ""
+    echo "   💡 Exemplo de uso:"
+    echo "      ./run_tests.sh test/dispositivoFisico/configGPOS820.robot"
     exit 1
 fi
 
@@ -314,6 +348,18 @@ if [ -f "$LOG_DIR/output.xml" ]; then
         echo "   ✅ Passou: $PASSED_TESTS"
         echo "   ❌ Falhou: $FAILED_TESTS"
         echo "   📊 Total: $TOTAL_TESTS"
+        
+        # Mostrar sumário das verificações se os testes passaram
+        if [ "$FAILED_TESTS" = "0" ] && [ "$PASSED_TESTS" != "0" ]; then
+            echo ""
+            log_success "Verificações do GPOS820 realizadas com sucesso!"
+            echo "   ✅ Navegação para configurações"
+            echo "   ✅ Nome do dispositivo verificado"
+            echo "   ✅ Versão do Android confirmada"
+            echo "   ✅ Versão do firmware validada"
+            echo "   ✅ Versão do hardware verificada"
+            echo "   ✅ Número de série confirmado"
+        fi
     else
         log_info "Install xmllint para estatísticas detalhadas: sudo apt install libxml2-utils"
     fi
