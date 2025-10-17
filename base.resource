@@ -8,17 +8,19 @@ Resource    resource/utils/scrollAction.resource
 Resource    resource/utils/screenshotUtils.resource
 
 # Locators
-Variables    resource/locators/chromeLocator.yml
-Variables    resource/locators/menuAppLocators.yml
-Variables    resource/locators/configLocators.yml
+Variables    resource/locators/emulador/chromeLocator.yml
+Variables    resource/locators/emulador/menuAppLocators.yml
+Variables    resource/locators/emulador/configLocators.yml
 Variables    resource/locators/my_device/configLocators.yml
 Variables    resource/locators/gpos760/configLocators.yml
+Variables    resource/locators/configAutomation/configLocators.yml
 
 # Pages
-Resource    resource/pages/chromePage.resource
-Resource    resource/pages/configPage.resource
+Resource    resource/pages/emulador/chromePage.resource
+Resource    resource/pages/emulador/configPage.resource
 Resource    resource/pages/my_device/configPage.resource
 Resource    resource/pages/gpos760/configPage.resource
+Resource    resource/pages/configAutomation/configPiloto.resource
 
 *** Variables ***
 ${PLATFORM_NAME}    Android

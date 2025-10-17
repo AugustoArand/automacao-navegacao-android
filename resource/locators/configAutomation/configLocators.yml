@@ -1,0 +1,111 @@
+config_terminal_piloto:
+  configIcon: //android.widget.TextView[@text="Configurações"]
+  configIconAlternative: //android.widget.TextView[@content-desc="Configurações"]
+
+rede_internet:
+  redeEInternetIcon: //android.widget.TextView[@text="Rede e internet"]
+  redeEInternetAlternative: //android.widget.TextView[@content-desc="Rede e internet"]
+  idDnsParticular: com.android.settings:id/private_dns_mode_provider
+  idDnsDesativado: com.android.settings:id/private_dns_mode_off
+  btnSalvarDNSParticular: android:id/button1
+  btnVoltar: //android.widget.ImageButton[@content-desc="Navegar para cima"]
+  # Localizadores adicionais para DNS
+  dnsParticularText: //android.widget.TextView[@text="DNS particular"]
+  dnsDesativadoText: //android.widget.TextView[@text="Desativado"]
+  btnOK: //android.widget.Button[@text="OK"]
+  btnSalvar: //android.widget.Button[@text="Salvar"]
+  # Localizadores para VPN
+  vpnIcon: //android.widget.TextView[@text="VPN"]
+  vpnIconAlternative: //android.widget.TextView[@content-desc="VPN"]
+  vpnSection: //android.widget.TextView[@resource-id="android:id/title" and @text="VPN"]
+  vpnSettings: com.android.settings:id/vpn_settings
+  addVpnButton: //android.widget.Button[@text="Adicionar VPN"]
+  vpnConnectButton: //android.widget.Button[@text="Conectar"]
+  vpnDisconnectButton: //android.widget.Button[@text="Desconectar"]
+  # Localizadores para Economia de Dados
+  economiaDadosIcon: //android.widget.TextView[@text="Economia de dados"]
+  economiaDadosIconAlternative: //android.widget.TextView[@content-desc="Economia de dados"]
+  economiaDadosSection: //android.widget.TextView[@resource-id="android:id/title" and @text="Economia de dados"]
+  economiaDadosSwitch: com.android.settings:id/data_saver_switch
+  economiaDadosToggle: //android.widget.Switch[@resource-id="com.android.settings:id/switchWidget"]
+  economiaDadosStatus: //android.widget.TextView[@resource-id="android:id/summary"]
+  economiaDadosDesativado: //android.widget.TextView[@text="Desativado"]
+  economiaDadosAtivado: //android.widget.TextView[@text="Ativado"]
+  dataSaverSettings: com.android.settings:id/data_saver_settings
+  # Localizadores adicionais para estados da Economia de Dados
+  economiaDadosOff: //android.widget.TextView[@text="Off"]
+  economiaDadosOn: //android.widget.TextView[@text="On"]
+  economiaDadosDisabled: //android.widget.TextView[@text="Disabled"]
+  economiaDadosEnabled: //android.widget.TextView[@text="Enabled"]
+  economiaDadosSummary: //android.widget.TextView[@resource-id="android:id/summary"]
+  dataSaverTitle: //android.widget.TextView[@text="Data Saver"]
+  # Localizadores para Modo Avião
+  modoAviaoIcon: //android.widget.TextView[@text="Modo avião"]
+  modoAviaoSwitch: com.android.settings:id/airplane_mode_switch
+  modoAviaoToggle: //android.widget.Switch[@content-desc="Modo avião"]
+  modoAviaoDesativado: //android.widget.TextView[@text="Desativado"]
+  modoAviaoStatus: //android.widget.TextView[@resource-id="android:id/summary"]
+  # Localizadores para Redes Móveis
+  redeMovelIcon: //android.widget.TextView[@text="Rede móvel"]
+  redeMovelIconAlternative: //android.widget.TextView[@text="Redes móveis"]
+  redeMovelSection: //android.widget.TextView[@resource-id="android:id/title" and @text="Rede móvel"]
+  mobileNetworkIcon: //android.widget.TextView[@text="Mobile network"]
+  # Dados móveis
+  dadosMovelSwitch: com.android.settings:id/mobile_data_switch
+  dadosMovelToggle: //android.widget.Switch[@content-desc="Dados móveis"]
+  dadosMovelStatus: //android.widget.TextView[@text="Dados móveis"]
+  dadosAtivados: //android.widget.TextView[@text="Ativado"]
+  dadosDesativados: //android.widget.TextView[@text="Desativado"]
+  # Roaming
+  roamingIcon: //android.widget.TextView[@text="Roaming de dados"]
+  roamingSwitch: com.android.settings:id/roaming_switch
+  roamingToggle: //android.widget.Switch[@content-desc="Roaming de dados"]
+  roamingDesativado: //android.widget.TextView[@text="Desativado"]
+  roamingAtivado: //android.widget.TextView[@text="Ativado"]
+  dataRoamingIcon: //android.widget.TextView[@text="Data roaming"]
+  # Alerta e limite de dados
+  alertaLimiteDadosIcon: //android.widget.TextView[@text="Alerta e limite de dados"]
+  alertaLimiteDadosAlternative: //android.widget.TextView[@text="Data usage alerts"]
+  alertaLimiteDadosSection: //android.widget.TextView[@resource-id="android:id/title" and @text="Alerta e limite de dados"]
+  # Definir alerta de uso de dados
+  definirAlertaIcon: //android.widget.TextView[@text="Definir alerta de uso de dados"]
+  definirAlertaSwitch: com.android.settings:id/data_usage_alert_switch
+  definirAlertaToggle: //android.widget.Switch[@content-desc="Definir alerta de uso de dados"]
+  alertaUsoDadosSwitch: //android.widget.Switch[@resource-id="com.android.settings:id/switchWidget"]
+  alertaDesabilitado: //android.widget.TextView[@text="Desabilitado"]
+  alertaHabilitado: //android.widget.TextView[@text="Habilitado"]
+  dataUsageAlert: //android.widget.TextView[@text="Data usage alert"]
+  # Seção Avançada e Seleção de Rede
+  secaoAvancadaSection: //android.widget.TextView[@resource-id="android:id/title" and @text="Avançadas"]
+  # Selecionar rede automaticamente
+  selecionarRedeAutoIcon: //android.widget.TextView[@text="Selecionar a rede automaticamente"]
+  selecionarRedeAutoAlternative: //android.widget.TextView[@text="Automatically select network"]
+  selecionarRedeAutoSwitch: com.android.settings:id/auto_network_selection_switch
+  selecionarRedeAutoToggle: //android.widget.Switch[@content-desc="Selecionar a rede automaticamente"]
+  networkSelectionSwitch: //android.widget.Switch[@resource-id="com.android.settings:id/switchWidget"]
+  redeAutoHabilitado: //android.widget.TextView[@text="Habilitado"]
+  redeAutoDesabilitado: //android.widget.TextView[@text="Desabilitado"]
+  autoNetworkSelection: //android.widget.TextView[@text="Automatic network selection"]
+  # Nomes dos pontos de acesso (APN)
+  pontosAcessoIcon: //android.widget.TextView[@text="Nomes dos pontos de acesso"]
+  pontosAcessoAlternative: //android.widget.TextView[@text="Access Point Names"]
+  pontosAcessoAPN: //android.widget.TextView[@text="APN"]
+  apnNamesIcon: //android.widget.TextView[@text="APN names"]
+  accessPointNames: //android.widget.TextView[@resource-id="android:id/title" and @text="Nomes dos pontos de acesso"]
+  apnSettings: com.android.settings:id/apn_settings
+  # Tela Internet e Informações da Operadora
+  internetIcon: //android.widget.TextView[@text="Internet"]
+  internetSection: //android.widget.TextView[@resource-id="android:id/title" and @text="Internet"]
+  internetAlternative: //android.widget.TextView[@text="Mobile network"]
+  # Operadora e Status de Conexão
+  operadoraInfo: //android.widget.TextView[@resource-id="android:id/summary"]
+  statusConexao: //android.widget.TextView[@content-desc="Status da conexão"]
+  operadoraNome: //android.widget.TextView[@resource-id="com.android.settings:id/carrier_name"]
+  statusRede: //android.widget.TextView[@resource-id="com.android.settings:id/network_type"]
+  conexaoStatus: //android.widget.TextView[@text="Conectado"]
+  conexao4G: //android.widget.TextView[@text="4G"]
+  conexao5G: //android.widget.TextView[@text="5G"]
+  conexaoLTE: //android.widget.TextView[@text="LTE"]
+  simCardInfo: //android.widget.TextView[@resource-id="com.android.settings:id/sim_card_info"]
+  providerName: //android.widget.TextView[@resource-id="android:id/title"]
+

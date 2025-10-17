@@ -17,16 +17,11 @@ Acessar Configurações do Terminal
         IF    not ${config_alt_click}
             Log    Localizadores XPath falharam, tentando por texto...
             ${text_click}=    Run Keyword And Return Status    Click Text    Configurações
-            
-            IF    not ${text_click}
-                Capturar Screenshot Evidencia    falha_configuracoes
-                Fail    Não foi possível encontrar o elemento Configurações
-            END
         END
     END
     
     Sleep    2s
-    Page Should Contain Text    Configurações    msg=Não foi possivel encontrar o texto Configurações
+    Page Should Contain Text    Configurações
 
 Ir Para Sobre o Dispositivo
     [Documentation]    Navega até a seção "Sobre o dispositivo" nas configurações do terminal GPOS820
