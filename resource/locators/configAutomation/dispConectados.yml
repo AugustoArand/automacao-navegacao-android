@@ -1,0 +1,193 @@
+dispositivos_conectados:
+  # Seção principal de Dispositivos Conectados
+  dispositivosConectadosIcon: //android.widget.TextView[@resource-id="android:id/title" and @text="Dispositivos conectados"]
+  dispositivosConectadosAlternative: //android.widget.TextView[@text="Connected devices"]
+  dispositivosConectadosSection: //android.widget.TextView[@resource-id="android:id/title" and @text="Dispositivos conectados"]
+  connectedDevicesSection: com.android.settings:id/connected_devices_section
+
+bluetooth:
+  # Localizadores principais do Bluetooth
+  bluetoothIcon: //android.widget.TextView[@text="Bluetooth"]
+  bluetoothIconAlternative: //android.widget.TextView[@content-desc="Bluetooth"]
+  bluetoothSection: //android.widget.TextView[@resource-id="android:id/title" and @text="Bluetooth"]
+  bluetoothSettings: com.android.settings:id/bluetooth_settings
+  
+  # Switch/Toggle do Bluetooth
+  bluetoothSwitch: com.android.settings:id/switch_widget
+  bluetoothToggle: //android.widget.Switch[@content-desc="Bluetooth"]
+  bluetoothSwitchBar: com.android.settings:id/sesl_switchbar_switch
+  bluetoothMainSwitch: //android.widget.Switch[@resource-id="com.android.settings:id/switchWidget"]
+  
+  # Estados do Bluetooth
+  bluetoothDesativado: //android.widget.TextView[@text="Desativado"]
+  bluetoothAtivado: //android.widget.TextView[@text="Ativado"]
+  bluetoothOff: //android.widget.TextView[@text="Off"]
+  bluetoothOn: //android.widget.TextView[@text="On"]
+  bluetoothEnabled: //android.widget.TextView[@text="Enabled"]
+  bluetoothDisabled: //android.widget.TextView[@text="Disabled"]
+  
+  # Procurar dispositivos
+  procurarDispositivosBtn: //android.widget.Button[@text="Procurar dispositivos"]
+  scanForDevicesBtn: //android.widget.Button[@text="Scan for devices"]
+  searchDevicesBtn: //android.widget.TextView[@text="Procurar dispositivos próximos"]
+  searchNearbyDevicesBtn: //android.widget.TextView[@text="Search for nearby devices"]
+  
+  # Lista de dispositivos
+  listaDispositivosDisponiveis: com.android.settings:id/available_devices_list
+  listaDispositivosEmparelhados: com.android.settings:id/paired_devices_list
+  devicesList: //androidx.recyclerview.widget.RecyclerView[@resource-id="com.android.settings:id/recycler_view"]
+  
+  # Dispositivos emparelhados
+  dispositivosEmparelhadosSection: //android.widget.TextView[@text="Dispositivos emparelhados"]
+  pairedDevicesSection: //android.widget.TextView[@text="Paired devices"]
+  dispositivosEmparelhadosHeader: //android.widget.TextView[@resource-id="android:id/title" and @text="Dispositivos emparelhados"]
+  
+  # Dispositivos disponíveis
+  dispositivosDisponiveisSection: //android.widget.TextView[@text="Dispositivos disponíveis"]
+  availableDevicesSection: //android.widget.TextView[@text="Available devices"]
+  dispositivosDisponiveisHeader: //android.widget.TextView[@resource-id="android:id/title" and @text="Dispositivos disponíveis"]
+  
+  # Ações de emparelhamento
+  btnEmparelhar: //android.widget.Button[@text="Emparelhar"]
+  btnPair: //android.widget.Button[@text="Pair"]
+  btnDesemparelhar: //android.widget.Button[@text="Desemparelhar"]
+  btnUnpair: //android.widget.Button[@text="Unpair"]
+  btnConectar: //android.widget.Button[@text="Conectar"]
+  btnConnect: //android.widget.Button[@text="Connect"]
+  btnDesconectar: //android.widget.Button[@text="Desconectar"]
+  btnDisconnect: //android.widget.Button[@text="Disconnect"]
+  
+  # Status de conexão
+  statusConectado: //android.widget.TextView[@text="Conectado"]
+  statusDesconectado: //android.widget.TextView[@text="Desconectado"]
+  statusConnected: //android.widget.TextView[@text="Connected"]
+  statusDisconnected: //android.widget.TextView[@text="Disconnected"]
+  statusEmparelhado: //android.widget.TextView[@text="Emparelhado"]
+  statusPaired: //android.widget.TextView[@text="Paired"]
+
+wifi_direct:
+  # WiFi Direct
+  wifiDirectIcon: //android.widget.TextView[@text="Wi-Fi Direct"]
+  wifiDirectSection: //android.widget.TextView[@resource-id="android:id/title" and @text="Wi-Fi Direct"]
+  wifiDirectSettings: com.android.settings:id/wifi_direct_settings
+  
+  # Procurar dispositivos Wi-Fi Direct
+  procurarWifiDirectBtn: //android.widget.Button[@text="Procurar dispositivos"]
+  searchWifiDirectBtn: //android.widget.Button[@text="Search for devices"]
+  wifiDirectScanBtn: //android.widget.TextView[@text="Procurar"]
+  
+  # Lista dispositivos Wi-Fi Direct
+  wifiDirectDevicesList: com.android.settings:id/wifi_direct_devices_list
+  wifiDirectAvailableDevices: //android.widget.TextView[@text="Dispositivos disponíveis"]
+  wifiDirectConnectedDevices: //android.widget.TextView[@text="Dispositivos conectados"]
+
+compartilhamento_proximidade:
+  # Compartilhamento por proximidade/NFC
+  nfcIcon: //android.widget.TextView[@text="NFC"]
+  nfcSection: //android.widget.TextView[@resource-id="android:id/title" and @text="NFC"]
+  nfcSwitch: com.android.settings:id/nfc_switch
+  nfcToggle: //android.widget.Switch[@content-desc="NFC"]
+  
+  # Android Beam / Compartilhamento próximo
+  androidBeamIcon: //android.widget.TextView[@text="Android Beam"]
+  androidBeamSection: //android.widget.TextView[@resource-id="android:id/title" and @text="Android Beam"]
+  compartilhamentoProximoIcon: //android.widget.TextView[@text="Compartilhamento próximo"]
+  nearbyShareIcon: //android.widget.TextView[@text="Nearby Share"]
+  
+  # Estados NFC
+  nfcAtivado: //android.widget.TextView[@text="Ativado"]
+  nfcDesativado: //android.widget.TextView[@text="Desativado"]
+  nfcEnabled: //android.widget.TextView[@text="Enabled"]
+  nfcDisabled: //android.widget.TextView[@text="Disabled"]
+
+usb:
+  # Conexões USB
+  usbIcon: //android.widget.TextView[@text="USB"]
+  usbSection: //android.widget.TextView[@resource-id="android:id/title" and @text="USB"]
+  usbSettings: com.android.settings:id/usb_settings
+  
+  # Modos USB
+  usbTransferenciaArquivos: //android.widget.TextView[@text="Transferência de arquivos"]
+  usbFileTransfer: //android.widget.TextView[@text="File transfer"]
+  usbCarregamentoApenas: //android.widget.TextView[@text="Carregamento apenas"]
+  usbChargingOnly: //android.widget.TextView[@text="Charging only"]
+  usbDepuracaoUsb: //android.widget.TextView[@text="Depuração USB"]
+  usbDebugging: //android.widget.TextView[@text="USB debugging"]
+  
+  # Status USB
+  usbConectado: //android.widget.TextView[@text="USB conectado"]
+  usbConnected: //android.widget.TextView[@text="USB connected"]
+  usbDesconectado: //android.widget.TextView[@text="USB desconectado"]
+  usbDisconnected: //android.widget.TextView[@text="USB disconnected"]
+
+hotspot_tethering:
+  # Hotspot e Tethering
+  hotspotIcon: //android.widget.TextView[@text="Hotspot e tethering"]
+  hotspotSection: //android.widget.TextView[@resource-id="android:id/title" and @text="Hotspot e tethering"]
+  tetheringSettings: com.android.settings:id/tethering_settings
+  
+  # Wi-Fi Hotspot
+  wifiHotspotIcon: //android.widget.TextView[@text="Hotspot Wi-Fi"]
+  wifiHotspotSection: //android.widget.TextView[@resource-id="android:id/title" and @text="Hotspot Wi-Fi"]
+  wifiHotspotSwitch: com.android.settings:id/wifi_hotspot_switch
+  wifiHotspotToggle: //android.widget.Switch[@content-desc="Hotspot Wi-Fi"]
+  
+  # Tethering USB
+  usbTetheringIcon: //android.widget.TextView[@text="Tethering USB"]
+  usbTetheringSection: //android.widget.TextView[@resource-id="android:id/title" and @text="Tethering USB"]
+  usbTetheringSwitch: com.android.settings:id/usb_tethering_switch
+  usbTetheringToggle: //android.widget.Switch[@content-desc="Tethering USB"]
+  
+  # Tethering Bluetooth
+  bluetoothTetheringIcon: //android.widget.TextView[@text="Tethering Bluetooth"]
+  bluetoothTetheringSection: //android.widget.TextView[@resource-id="android:id/title" and @text="Tethering Bluetooth"]
+  bluetoothTetheringSwitch: com.android.settings:id/bluetooth_tethering_switch
+  bluetoothTetheringToggle: //android.widget.Switch[@content-desc="Tethering Bluetooth"]
+
+cast_projecao:
+  # Transmitir/Projeção de tela
+  castIcon: //android.widget.TextView[@text="Transmitir"]
+  castSection: //android.widget.TextView[@resource-id="android:id/title" and @text="Transmitir"]
+  castSettings: com.android.settings:id/cast_settings
+  
+  # Projeção sem fio
+  projecaoSemFioIcon: //android.widget.TextView[@text="Projeção sem fio"]
+  wirelessProjectionIcon: //android.widget.TextView[@text="Wireless projection"]
+  displayWirelessIcon: //android.widget.TextView[@text="Display sem fio"]
+  
+  # Dispositivos de Cast disponíveis
+  castDevicesList: com.android.settings:id/cast_devices_list
+  dispositivosCastDisponiveis: //android.widget.TextView[@text="Dispositivos disponíveis"]
+  availableCastDevices: //android.widget.TextView[@text="Available devices"]
+  
+  # Ações de Cast
+  btnConectarCast: //android.widget.Button[@text="Conectar"]
+  btnConnectCast: //android.widget.Button[@text="Connect"]
+  btnDesconectarCast: //android.widget.Button[@text="Desconectar"]
+  btnDisconnectCast: //android.widget.Button[@text="Disconnect"]
+
+controles_gerais:
+  # Controles e navegação gerais
+  btnVoltar: //android.widget.ImageButton[@content-desc="Navegar para cima"]
+  btnBack: //android.widget.ImageButton[@content-desc="Navigate up"]
+  btnConfiguracao: //android.widget.ImageButton[@content-desc="Configurações"]
+  btnSettings: //android.widget.ImageButton[@content-desc="Settings"]
+  btnMenu: //android.widget.ImageButton[@content-desc="Mais opções"]
+  btnMoreOptions: //android.widget.ImageButton[@content-desc="More options"]
+  
+  # Botões de ação padrão
+  btnOK: //android.widget.Button[@text="OK"]
+  btnCancelar: //android.widget.Button[@text="Cancelar"]
+  btnCancel: //android.widget.Button[@text="Cancel"]
+  btnSalvar: //android.widget.Button[@text="Salvar"]
+  btnSave: //android.widget.Button[@text="Save"]
+  btnAplicar: //android.widget.Button[@text="Aplicar"]
+  btnApply: //android.widget.Button[@text="Apply"]
+  
+  # Lista de dispositivos geral
+  recyclerViewDispositivos: //androidx.recyclerview.widget.RecyclerView[@resource-id="com.android.settings:id/recycler_view"]
+  listaDispositivos: com.android.settings:id/device_list
+  
+  # Seção de preferências
+  preferencesList: //androidx.recyclerview.widget.RecyclerView[@resource-id="com.android.settings:id/recycler_view"]
+  preferencesSection: com.android.settings:id/main_content_scrollable_container

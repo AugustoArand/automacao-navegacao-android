@@ -37,3 +37,8 @@ Swipe Up On 720x1280 Screen
     [Documentation]    Realiza um swipe para cima na tela 720x1280
     [Arguments]    ${duration}=2s
     Swipe    start_x=360    start_y=1000    end_x=360    end_y=200    duration=${duration}
+
+Swipe Down On 720x1280 Screen
+    [Documentation]    Realiza um swipe para baixo na tela 720x1280
+    [Arguments]    ${duration}=2s
+    Swipe    start_x=360    start_y=200    end_x=360    end_y=1000    duration=${duration}

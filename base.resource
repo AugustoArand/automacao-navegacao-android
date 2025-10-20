@@ -6,6 +6,7 @@ Resource    resource/utils/openApp.resource
 Resource    resource/utils/swipeAction.resource
 Resource    resource/utils/scrollAction.resource
 Resource    resource/utils/screenshotUtils.resource
+Resource    resource/utils/telaConfig.resource
 
 # Locators
 Variables    resource/locators/emulador/chromeLocator.yml
@@ -14,6 +15,7 @@ Variables    resource/locators/emulador/configLocators.yml
 Variables    resource/locators/my_device/configLocators.yml
 Variables    resource/locators/gpos760/configLocators.yml
 Variables    resource/locators/configAutomation/configLocators.yml
+Variables    resource/locators/configAutomation/dispConectados.yml
 
 # Pages
 Resource    resource/pages/emulador/chromePage.resource
@@ -21,6 +23,7 @@ Resource    resource/pages/emulador/configPage.resource
 Resource    resource/pages/my_device/configPage.resource
 Resource    resource/pages/gpos760/configPage.resource
 Resource    resource/pages/configAutomation/configPiloto.resource
+Resource    resource/pages/configAutomation/dispConectados.resource
 
 *** Variables ***
 ${PLATFORM_NAME}    Android

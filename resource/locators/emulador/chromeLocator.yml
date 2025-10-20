@@ -1,5 +1,0 @@
-chrome:
-  chromeApp: //android.widget.TextView[@content-desc="Chrome"]
-  chromeSkip: com.android.chrome:id/signin_fre_dismiss_button
-  chromeNegativeButton: com.android.chrome:id/negative_button
-  chromeHomePage: com.android.chrome:id/search_provider_logo

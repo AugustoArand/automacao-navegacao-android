@@ -1,6 +1,0 @@
-config:
-  # Diferentes variações possíveis do texto "About"
-  configIcon: //android.widget.TextView[@text="Settings"]
-  aboutDevice: (//android.widget.RelativeLayout[@resource-id="com.android.settings:id/text_frame"])[5]
-  aboutDeviceText: //android.widget.TextView[@text="About emulated device"]
-  IMEI: //android.widget.TextView[@resource-id="android:id/summary" and @text="867400022047199"]

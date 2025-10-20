@@ -415,6 +415,11 @@ Validar SIM Card e Internet
     [Documentation]    Executa validação completa do SIM Card e status de internet
     Log    Iniciando validação do SIM Card e Internet...
     
+    # Inicializar variáveis
+    Set Test Variable    ${OPERADORA}    Não identificado
+    Set Test Variable    ${STATUS_CONEXAO}    Não identificado
+    Set Test Variable    ${TIPO_REDE}    Não identificado
+    
     # Acessar tela Internet
     Acessar Tela Internet
     

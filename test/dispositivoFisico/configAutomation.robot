@@ -50,4 +50,5 @@ Cenário 08: Nomes dos Pontos de Acesso
     Voltar Para Rede e Internet
 
 Cenário 09: Validar SIM Card Ativo e Com Internet
+    Acessar Tela de Rede e Internet
     Validar SIM Card e Internet
